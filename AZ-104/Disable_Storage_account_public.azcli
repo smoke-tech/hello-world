@@ -1,0 +1,23 @@
+az storage account create \
+    --name <storage-account> \
+    --resource-group <resource-group> \
+    --kind StorageV2 \
+    --location <location> \
+    --allow-blob-public-access true
+
+az storage account show \
+    --name <storage-account> \
+    --resource-group <resource-group> \
+    --query allowBlobPublicAccess \
+    --output tsv
+
+az storage account update \
+    --name <storage-account> \
+    --resource-group <resource-group> \
+    --allow-blob-public-access false
+
+az storage account show \
+    --name <storage-account> \
+    --resource-group <resource-group> \
+    --query allowBlobPublicAccess \
+    --output tsv
